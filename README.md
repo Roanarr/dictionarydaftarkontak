@@ -4,3 +4,5 @@
 ## Nama sebagai key, dan nomor sebagai value
 ## Tampilkan kontaknya Ari
 ![KONTAK0](https://user-images.githubusercontent.com/118960008/205059522-8021cd89-427d-40f4-9860-ec3243e36283.png)
+![SOAL](https://user-images.githubusercontent.com/118960008/205060689-d0e8c16e-5f7c-46a3-9be7-fe7f4992b9c6.png)
+
