@@ -11,34 +11,32 @@ while True:
         break
     elif c.lower() == 'l':
         i = open('database.txt','r').read().splitlines()
-        P(" ╔═════════════════════════════════════════════════════════════════════╗")
-        P(" ╠════════════DAFTAR KONTAK ══════════════════════════╣")
-        P(" ╠══════════════════╦══════════════════╦═══════╦═══════╦═══════╦═══════╣")
-        P(" ║      NAMA        ║       NOMOR        ║ TUGAS ║  UTS  ║  UAS  ║ AKHIR ║")
-        P(" ╠══════════════════╬══════════════════╬═══════╬═══════╬═══════╬═══════╣")
+        P(" ╔═════════════════════════════════════╗")
+        P(" ╠════════════DAFTAR KONTAK ═══════════╣")
+        P(" ╠══════════════════╦══════════════════╣")
+        P(" ║      NAMA        ║       NOMOR      ║")
+        P(" ╠══════════════════╬══════════════════╬")
         for l in i:
             if l == '':
                 pass
             else:
-                l1 = l.replace('Nama : ','').replace('Nomor : ','').replace('Tugas : ','').replace('UTS : ','').replace('UAS : ','').replace('Akhir : ','')
-                na,ni,tu,uts,uas,akhir = l1.strip().split('|')
-                P((' ║ ')+(na[:15]).ljust(17,'.')+('║ ')+(ni).ljust(17)+('║ ')+(tu).ljust(6)+('║ ')+(uts).ljust(6)+('║ ')+(uas).ljust(6)+('║ ')+(akhir).ljust(6)+('║'))
+                l1 = l.replace('Nama : ','').replace('Nomor : ','') = l1.strip().split('|')
+                P((' ║ ')+(na[:15]).ljust(17,'.')+('║ ')+(no).ljust(17)+('║ '))
         P(" ╚══════════════════╩══════════════════╩═══════╩═══════╩═══════╩═══════╝")
     elif c.lower() == 's':
         cari = input(' Mencari : ')
         i = open('database.txt','r').read().splitlines()
-        P(" ╔═════════════════════════════════════════════════════════════════════╗")
-        P(" ╠════════════DAFTAR KONTAK ══════════════════════════╣")
-        P(" ╠══════════════════╦══════════════════╦═══════╦═══════╦═══════╦═══════╣")
-        P(" ║      NAMA        ║       NOMOR        ║ TUGAS ║  UTS  ║  UAS  ║ AKHIR ║")
-        P(" ╠══════════════════╬══════════════════╬═══════╬═══════╬═══════╬═══════╣")
+        P(" ╔═════════════════════════════════════╗")
+        P(" ╠════════════DAFTAR KONTAK ═══════════╣")
+        P(" ╠══════════════════╦══════════════════╣")
+        P(" ║      NAMA        ║       NOMOR      ║")
+        P(" ╠══════════════════╬══════════════════╬")
         for l in i:
             if l == '':
                 pass
             elif cari in l:
-                l1 = l.replace('Nama : ','').replace('Nomor : ','').replace('Tugas : ','').replace('UTS : ','').replace('UAS : ','').replace('Akhir : ','')
-                na,ni,tu,uts,uas,akhir = l1.strip().split('|')
-                P((' ║ ')+(na).ljust(17)+('║ ')+(no).ljust(17)+('║ ')+(tu).ljust(6)+('║ ')+(uts).ljust(6)+('║ ')+(uas).ljust(6)+('║ ')+(akhir).ljust(6)+('║'))
+                l1 = l.replace('Nama : ','').replace('Nomor : ','') = l1.strip().split('|')
+                P((' ║ ')+(na).ljust(17)+('║ ')+(no).ljust(17)+('║ '))
         P(" ╚══════════════════╩══════════════════╩═══════╩═══════╩═══════╩═══════╝")
     elif c.lower() == 'd':
         u = open('database.txt','r').read().splitlines()
@@ -48,8 +46,7 @@ while True:
             if l == '':
                 pass
             else:
-                l1 = l.replace('Nama : ','').replace('Nomor : ','').replace('Tugas : ','').replace('UTS : ','').replace('UAS : ','').replace('Akhir : ','')
-                na,no,tu,uts,uas,akhir = l1.strip().split('|')
+                l1 = l.replace('Nama : ','').replace('Nomor : ','') = l1.strip().split('|')
                 if str(na) == str(target):
                     P('BERHASIL MENGHAPUS Data %s'%(target))
                     pass
@@ -74,8 +71,8 @@ while True:
             if l == '':
                 pass
             else:
-                l1 = l.replace('Nama : ','').replace('Nomor : ','').replace('Tugas : ','').replace('UTS : ','').replace('UAS : ','').replace('Akhir : ','')
-                na,ni,tu,uts,uas,akhir = l1.strip().split('|')
+                l1 = l.replace('Nama : ','').replace('Nomor : ','')
+                na,no = l1.strip().split('|')
                 if na == target:
                     P(' Mengedit Data %s'%(target))
                     while (True):
@@ -93,35 +90,8 @@ while True:
                             P(' Masukan Nomor dengan Angka')
                         else:
                             break
-                    while (True):
-                        try:
-                            tugas  = int(input(" TUGAS  : "))
-                            if tugas == '':
-                                P(' Masukan TUGAS dengan Angka')
-                        except ValueError:
-                            P(' Masukan TUGAS dengan Angka')
-                        else:
-                            break
-                    while (True):
-                        try:
-                            uts  = int(input(" UTS  : "))
-                            if uts == '':
-                                P(' Masukan UTS dengan Angka')
-                        except ValueError:
-                            P(' Masukan UTS dengan Angka')
-                        else:
-                            break
-                    while (True):
-                        try:
-                            uas  = int(input(" UAS  : "))
-                            if uas == '':
-                                P(' Masukan UAS dengan Angka')
-                        except ValueError:
-                            P(' Masukan UAS dengan Angka')
-                        else:
-                            break
-                    akhir = round((float(tugas) * 0.3)+(float(uts) * 0.35)+(float(uas) * 0.35),2)
-                    edit  =('Nama : '+nama+'|Nomor : '+str(nomor)+'|Tugas : '+str(tugas)+'|UTS : '+str(uts)+'|UAS : '+str(uas)+"|Akhir : "+str(akhir)+'\n')
+                    akhir = round((float(nomor) * 0)
+                    edit  =('Nama : '+nama+'|Nomor : '+str(nomor)+'\n')
                     nm.append(edit+'\n')
                 else:
                     nm.append(str(l)+'\n')
@@ -154,35 +124,8 @@ while True:
                 P(' Masukan Nomor dengan Angka')
             else:
                 break
-        while (True):
-            try:
-                tugas  = int(input(" TUGAS  : "))
-                if tugas == '':
-                    P(' Masukan TUGAS dengan Angka')
-            except ValueError:
-                P(' Masukan TUGAS dengan Angka')
-            else:
-                break
-        while (True):
-            try:
-                uts  = int(input(" UTS  : "))
-                if uts == '':
-                    P(' Masukan UTS dengan Angka')
-            except ValueError:
-                P(' Masukan UTS dengan Angka')
-            else:
-                break
-        while (True):
-            try:
-                uas  = int(input(" UAS  : "))
-                if uas == '':
-                    P(' Masukan UAS dengan Angka')
-            except ValueError:
-                P(' Masukan UAS dengan Angka')
-            else:
-                break
-        akhir = round((float(tugas) * 0.3)+(float(uts) * 0.35)+(float(uas) * 0.35),2)
-        i.write('\nNama : '+nama+'|Nomor : '+str(nomor)+'|Tugas : '+str(tugas)+'|UTS : '+str(uts)+'|UAS : '+str(uas)+"|Akhir : "+str(akhir)+'\n')
+        akhir = round((float(nomor) * 0)
+        i.write('\nNama : '+nama+'|Nomor : '+str(nomor)+'\n')
         i.close()
         Oc("clear")
     else:
